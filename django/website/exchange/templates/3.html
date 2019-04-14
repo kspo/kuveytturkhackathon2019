@@ -1,0 +1,742 @@
+
+ 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KuveytTurk Hackathon 2019</title>
+
+    <!--bootstrap Css-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .coin-list tr td, .coin-list tr th{
+            padding: 0;
+            text-align: center;
+            font-size: 11px;
+        }
+        .container{
+            max-width: 85% !important;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <div class="d-flex flex-grow-1">
+                <span class="w-100 d-lg-none d-block"><!-- hidden spacer to center brand on mobile --></span>
+                <a class="navbar-brand d-none d-lg-inline-block" href="#">
+                    <img src="https://www.kuveytturk.com.tr/_assets/img/kuveyt-turk.png" style="max-width:220px; max-height: 40px;" alt="Logo">
+                </a>
+                <a class="navbar-brand-two mx-auto d-lg-none d-inline-block">
+                    <img src="https://www.kuveytturk.com.tr/_assets/img/kuveyt-turk.png" style="max-width:220px; max-height: 40px;" alt="Logo">
+                </a>
+                <div class="w-100 text-right">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar">
+                <ul class="navbar-nav ml-auto flex-nowrap">
+                    <li class="nav-item active">
+                        <a href="#" class="nav-link ">
+                            <span class="title">Toplam Varlıklar : 68000 TL</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="#" class="nav-link ">
+                            <span class="title">Borsa</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cüzdan </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a href="#" class="dropdown-item">
+                                <span class="title">İşlem Geçmişi</span>
+                            </a>
+
+                            <a href="#" class="dropdown-item">
+                                <span class="title">Açık Emirler</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Profil
+        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a href="#" class="dropdown-item">
+                                <span class="title">Hesap Ayarları</span>
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                <span class="title"> KuveytTürk İnternet Şube</span>
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                <span class="title">Mobil Şube</span>
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                <span class="title">Güvenli Çıkış</span>
+                            </a>
+                       
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="dashboard-white mt-4">
+        <div class="container">
+            <div class="dashboard-body">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="card" style="height: 450px">
+                            <div class="card-header">
+                                MARKET
+                            </div>
+                            <div style=" padding: 10px;">
+                                <div class="btn-group" role="group" aria-label="Basic example" style="height: 30px;display: flex;">
+                                    <button type="button" style="flex: 1;padding: 3px;" class="btn btn-outline-secondary">TL</button>
+                                    <button type="button" style="flex: 1;padding: 3px;" class="btn btn-outline-secondary">USD</button>
+                                    <button type="button" style="flex: 1;padding: 3px;" class="btn btn-outline-secondary">EURO</button>
+                                </div>
+                            </div>
+                            <div style=" padding: 10px;">
+                                <div class="input-group mb-3" style="height: 30px;">
+                                    <input type="text" class="form-control" style="height: 30px;border: 1px solid #474747;border-radius: 10px;" placeholder="Arama" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary" style="height: 30px;border: none;" type="button" id="button-addon2"><i class="fab fa-gitter"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="new-ticker-block market-new-ticker-block">
+                                <div class="market-ticker-block dashboard-ticker-block-three">
+                                    <!-- Tab panes -->
+                                    <div class="tab-content">
+                                        <div role="tabpanel" class="tab-pane fade in active show das-market-tab-pane" >
+                                            <table class="table coin-list table-hover">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">Per</th>
+                                                        <th scope="col">Fiyat</th>
+                                                        <th scope="col">Değişim</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>USD/TL</td>
+                                                        <td><span class="color-buy">5.7906</span></td>
+                                                        <td><span class="color-sell">+0.20%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>EUR/TL</td>
+                                                        <td><span class="color-buy">6.5200</span></td>
+                                                        <td><span class="color-buy">+0.26%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>GBP/TL</td>
+                                                        <td><span class="color-sell">7.5304</span></td>
+                                                        <td><span class="color-sell">+0.13%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>CHF/TL</td>
+                                                        <td><span class="color-sell">5.7514</span></td>
+                                                        <td><span class="color-sell">+0.03%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>CAD/TL</td>
+                                                        <td><span class="color-sell">4.3306</span></td>
+                                                        <td><span class="color-sell">+0.41%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>RUB/TL</td>
+                                                        <td><span class="color-sell">0.0089</span></td>
+                                                        <td><span class="color-sell">-0.33%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>AED/TL</td>
+                                                        <td><span class="color-sell">1.5620</span></td>
+                                                        <td><span class="color-sell">+0.09%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>AUD/TL</td>
+                                                        <td><span class="color-sell">4.1387</span></td>
+                                                        <td><span class="color-sell">+0.43%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>DKK/TL</td>
+                                                        <td><span class="color-sell">0.8794</span></td>
+                                                        <td><span class="color-sell">+0.13%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>SEK/TL</td>
+                                                        <td><span class="color-sell">0.0623</span></td>
+                                                        <td><span class="color-sell">-0.21%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>KWD/TL</td>
+                                                        <td><span class="color-sell">18.8375</span></td>
+                                                        <td><span class="color-sell">+0.67%</span></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- market-ticker-block -->
+                            </div>
+                            <!-- new-ticker-block -->
+                        </div>
+                        <!-- das-market-block -->
+                        <div class="card order-history-block mt-3" style="height: 315px">
+                            <div class="card-header">
+                                ALIM SATIM DEFTERİ
+                            </div>
+                            <div class="order-history-block-inner dashboard-ticker-block-four">
+                                <div class="history-table-wrap">
+                                    <table class="table coin-list table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Fiyat</th>
+                                                <th scope="col">Miktar</th>
+                                                <th scope="col">Toplam(Tl)</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><span class="color-buy">5.7906</span></td>
+                                                <td>587</td>
+                                                <td>3399</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="color-buy">5.7899</span></td>
+                                                <td>135</td>
+                                                <td>780</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="color-sell">5.7901</span></td>
+                                                <td>2340</td>
+                                                <td>13548</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="color-buy">5.7891</span></td>
+                                                <td>468</td>
+                                                <td>2709</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="color-sell">5.7886</span></td>
+                                                <td>5637</td>
+                                                <td>32630</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="color-sell">5.7908</span></td>
+                                                <td>740</td>
+                                                <td>4285</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="color-buy">5.7918</span></td>
+                                                <td>280</td>
+                                                <td>1621</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="color-buy">5.7906</span></td>
+                                                <td>1108</td>
+                                                <td>6415</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="color-sell">5.7885</span></td>
+                                                <td>862</td>
+                                                <td>4989</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="color-buy">5.7883</span></td>
+                                                <td>960</td>
+                                                <td>5556</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="color-buy">5.7923</span></td>
+                                                <td>76</td>
+                                                <td>440</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="color-sell">5.7938</span></td>
+                                                <td>637</td>
+                                                <td>3690</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="color-buy">5.7941</span></td>
+                                                <td>21030</td>
+                                                <td>121849</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="color-sell">5.7938</span></td>
+                                                <td>137</td>
+                                                <td>793</td>
+                                            </tr>
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- order-history-block-inner -->
+                        </div>
+                        <!-- order-history-block -->
+                    </div>
+                    <!-- col-lg-3 -->
+
+                    <div class="col-lg-6">
+                        <div class="card p-0">
+                            <div class="card-header">
+                                GRAFİK
+                            </div>
+                            <div id="tradingview_57f17"></div>
+
+                        </div>
+                        <!-- exchange-chart-block -->
+                        <div class="card mt-3">
+                            <div class="card-header">
+                               EMİR GİR
+                            </div>
+                            
+                            <div class="d-flex">
+                                <form role="form" method="POST" enctype="multipart/form-data">
+                                  {%csrf_token%}
+                                <div class="col">
+                                    <div class="row m-0 p-0 d-flex justify-content-between">
+                                        <label class="m-0 p-0">USD Al </label>
+                                        <label class="m-0 p-0"><i class="fas fa-wallet">Bakiye 0 TL</i></label>
+                                    </div>
+                                    <div class="trnsc input-group mb-3">
+                                        <div class="input-group-prepend"><span class="input-group-text">Fiyat  </span></div>
+                                        <input class="form-control disabled" type="text" name="price" >
+                                        <div class="input-group-append"><span class="input-group-text"></span></div>
+                                    </div>
+
+                                    <div class="ng-star-inserted">
+                                        <div class="trnsc input-group mb-3 wrapperDisabled">
+                                            <div class="input-group-prepend"><span  class="input-group-text">Miktar</span></div>
+                                            <input  name="amount" class="form-control ng-untouched ng-pristine ng-invalid" maxlength="15" min="0" onkeypress="return String.fromCharCode(event.charCode).match(/[0-9.]/g) != null" placeholder="0.00" required="" type="text" ng-reflect-required="" ng-reflect-maxlength="15" ng-reflect-name="volunemarket" ng-reflect-model="">
+                                            <div class="input-group-append"><span class="input-group-text">USD</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="w-100 d-flex percentage"><a class="col text-center">25%</a><a class="col text-center">50%</a><a class="col text-center">75%</a><a class="col text-center">100%</a></div>
+                                    <div class="trnsc input-group mb-3">
+                                        <div class="input-group-prepend"><span class="input-group-text">Toplam</span></div><span class="form-control" style="background-color: transparent;border-color: #6b6b6b;">0</span>
+                                        <div class="input-group-append"><span class="input-group-text">TL</span></div>
+                                    </div>
+                                    
+                                    <div class="feeTotal"></div>
+                                    <button class="btn btn-success btn-sm btn-block" type="submit">Alış Emri Gir</button>
+                                </div>
+                                </form>
+                                <div class="col">
+                                    <div class="row m-0 p-0 d-flex justify-content-between">
+                                        <label class="m-0 p-0">USD Sat</label>
+                                        <label class="m-0 p-0"><i class="fas fa-wallet"></i>Bakiye 0 USD</label>
+                                    </div>
+                                    <div class="trnsc input-group mb-3">
+                                        <div class="input-group-prepend"><span class="input-group-text">Fiyat</span></div>
+                                        <input class="form-control disabled" type="text">
+                                        <div class="input-group-append"><span class="input-group-text">TL</span></div>
+                                    </div>
+
+                                    <div class="wrapperDisabled ng-star-inserted">
+                                        <div class="trnsc input-group mb-3">
+                                            <div class="input-group-prepend"><span class="input-group-text">Miktar</span></div>
+                                            <input class="form-control ng-untouched ng-pristine ng-invalid" id="volunemarket" maxlength="15" min="0" name="volunemarket" onkeypress="return String.fromCharCode(event.charCode).match(/[0-9.]/g) != null" placeholder="0.00" required="" type="text" ng-reflect-required="" ng-reflect-maxlength="15" ng-reflect-name="volunemarket" ng-reflect-model="">
+                                            <div class="input-group-append"><span class="input-group-text">USD</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="w-100 d-flex percentage"><a class="col text-center">25%</a><a class="col text-center">50%</a><a class="col text-center">75%</a><a class="col text-center">100%</a></div>
+                                    <div class="trnsc input-group mb-3">
+                                        <div class="input-group-prepend"><span class="input-group-text">Toplam</span></div><span class="form-control" style="background-color: transparent; border-color: #6b6b6b;"></span>
+                                        <div class="input-group-append"><span class="input-group-text">TL</span></div>
+                                    </div>
+                                    <div class="feeTotal"></div>
+                                    <button class="btn btn-danger btn-sm btn-block" type="submit">Satış Emri Gir</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="card p-0" style="height: 780px;">
+                            <div class="card-header">
+                                EMİRLER TABLOSU
+                            </div>
+                            <div style=" padding: 10px;">
+                                <div class="btn-group" role="group" aria-label="Basic example" style="height: 30px;display: flex;">
+                                    <button type="button" style="flex: 1;padding: 3px;" class="btn btn-outline-secondary">HEPSİ</button>
+                                    <button type="button" style="flex: 1;padding: 3px;" class="btn btn-outline-secondary">ALIŞ</button>
+                                    <button type="button" style="flex: 1;padding: 3px;" class="btn btn-outline-secondary">SATIŞ</button>
+                                </div>
+                            </div>
+                            <div class="das-oreder-table-block dashboard-ticker-block-one">
+                                <table class="table coin-list table-hover">
+                                    <thead class="">
+                                        <tr>
+                                            <th class="text-center" scope="col">Fiyat</th>
+                                            <th class="text-center" scope="col">Miktar</th>
+                                            <th class="text-center" scope="col">Toplam(Tl)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><span class="color-sell-1">5.7988</span></td>
+                                            <td class="text-center"><span>4000</span></td>
+                                            <td class="text-center">
+                                                <span>23173</span>
+                                                <div class="rate-ratio"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="color-sell-1">5.7985</span></td>
+                                            <td class="text-center"><span>940</span></td>
+                                            <td class="text-center">
+                                                <span>5445</span>
+                                                <div class="rate-ratio"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="color-sell-1">5.7981</span></td>
+                                            <td class="text-center"><span>3500</span></td>
+                                            <td class="text-center">
+                                                <span>20274</span>
+                                                <div class="rate-ratio"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="color-sell-1">5.7979</span></td>
+                                            <td class="text-center"><span>940</span></td>
+                                            <td class="text-center">
+                                                <span>5445</span>
+                                                <div class="rate-ratio"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="color-sell-1">5.7968</span></td>
+                                            <td class="text-center"><span>3500</span></td>
+                                            <td class="text-center">
+                                                <span>20274</span>
+                                                <div class="rate-ratio"></div>
+                                            </td>
+                                        </tr>
+                                       <tr>
+                                            <td><span class="color-sell-1">5.7949</span></td>
+                                            <td class="text-center"><span>4000</span></td>
+                                            <td class="text-center">
+                                                <span>23173</span>
+                                                <div class="rate-ratio"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="color-sell-1">5.7945</span></td>
+                                            <td class="text-center"><span>940</span></td>
+                                            <td class="text-center">
+                                                <span>5445</span>
+                                                <div class="rate-ratio"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="color-sell-1">5.7940</span></td>
+                                            <td class="text-center"><span>3500</span></td>
+                                            <td class="text-center">
+                                                <span>20274</span>
+                                                <div class="rate-ratio"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="color-sell-1">5.7934</span></td>
+                                            <td class="text-center"><span>4000</span></td>
+                                            <td class="text-center">
+                                                <span>23173</span>
+                                                <div class="rate-ratio"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="color-sell-1">5.7933</span></td>
+                                            <td class="text-center"><span>940</span></td>
+                                            <td class="text-center">
+                                                <span>5445</span>
+                                                <div class="rate-ratio"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="color-sell-1">5.7928</span></td>
+                                            <td class="text-center"><span>3500</span></td>
+                                            <td class="text-center">
+                                                <span>20274</span>
+                                                <div class="rate-ratio"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="color-sell-1">5.7925</span></td>
+                                            <td class="text-center"><span>500</span></td>
+                                            <td class="text-center">
+                                                <span>289</span>
+                                                <div class="rate-ratio"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="color-sell-1">5.7922</span></td>
+                                            <td class="text-center"><span>1064</span></td>
+                                            <td class="text-center">
+                                                <span>6162</span>
+                                                <div class="rate-ratio"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="color-sell-1">5.7920</span></td>
+                                            <td class="text-center"><span>12000</span></td>
+                                            <td class="text-center">
+                                                <span>69504</span>
+                                                <div class="rate-ratio"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="color-sell-1">5.7918</span></td>
+                                            <td class="text-center"><span>711</span></td>
+                                            <td class="text-center">
+                                                <span>4117</span>
+                                                <div class="rate-ratio"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="color-sell-1">5.7909</span></td>
+                                            <td class="text-center"><span>1120</span></td>
+                                            <td class="text-center">
+                                                <span>6485</span>
+                                                <div class="rate-ratio"></div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="dahboard-order-block" style=" border-radius: 0;border:0;">
+                                <div class="das-oreder-table-block text-center" style="padding: 20px 0;">
+                                    <h3 style="color: #10cf78;font-weight: 600;">+5.7906</h3>
+                                </div>
+                            </div>
+                            <!-- dahboard-order-block -->
+
+                            <div class="das-oreder-table-block dashboard-ticker-block-two">
+                                <table class="table coin-list table-hover">
+                                    <tbody>
+                                        <tr>
+                                            <td><span class="color-sell">5.7904</span></td>
+                                            <td class="text-center"><span>980</span></td>
+                                            <td class="text-center">
+                                                <span>5980</span>
+                                                <div class="rate-ratio"></div>
+                                            </td>
+                                        </tr>
+                                          <tr>
+                                            <td><span class="color-sell-1">5.7890</span></td>
+                                            <td class="text-center"><span>940</span></td>
+                                            <td class="text-center">
+                                                <span>5445</span>
+                                                <div class="rate-ratio"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="color-sell-1">5.7884</span></td>
+                                            <td class="text-center"><span>3500</span></td>
+                                            <td class="text-center">
+                                                <span>20274</span>
+                                                <div class="rate-ratio"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="color-sell-1">5.7875</span></td>
+                                            <td class="text-center"><span>500</span></td>
+                                            <td class="text-center">
+                                                <span>289</span>
+                                                <div class="rate-ratio"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="color-sell-1">5.7864</span></td>
+                                            <td class="text-center"><span>1064</span></td>
+                                            <td class="text-center">
+                                                <span>6162</span>
+                                                <div class="rate-ratio"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="color-sell-1">5.7857</span></td>
+                                            <td class="text-center"><span>12000</span></td>
+                                            <td class="text-center">
+                                                <span>69504</span>
+                                                <div class="rate-ratio"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="color-sell-1">5.7855</span></td>
+                                            <td class="text-center"><span>711</span></td>
+                                            <td class="text-center">
+                                                <span>4117</span>
+                                                <div class="rate-ratio"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="color-sell-1">5.7845</span></td>
+                                            <td class="text-center"><span>1120</span></td>
+                                            <td class="text-center">
+                                                <span>6485</span>
+                                                <div class="rate-ratio"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="color-sell">5.7838</span></td>
+                                            <td class="text-center"><span>980</span></td>
+                                            <td class="text-center">
+                                                <span>5980</span>
+                                                <div class="rate-ratio"></div>
+                                            </td>
+                                        </tr>
+                                          <tr>
+                                            <td><span class="color-sell-1">5.7830</span></td>
+                                            <td class="text-center"><span>940</span></td>
+                                            <td class="text-center">
+                                                <span>5445</span>
+                                                <div class="rate-ratio"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="color-sell-1">5.7815</span></td>
+                                            <td class="text-center"><span>3500</span></td>
+                                            <td class="text-center">
+                                                <span>20274</span>
+                                                <div class="rate-ratio"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="color-sell-1">5.7810</span></td>
+                                            <td class="text-center"><span>500</span></td>
+                                            <td class="text-center">
+                                                <span>289</span>
+                                                <div class="rate-ratio"></div>
+                                            </td>
+                                        </tr>
+                                          <tr>
+                                            <td><span class="color-sell-1">5.7816</span></td>
+                                            <td class="text-center"><span>940</span></td>
+                                            <td class="text-center">
+                                                <span>5445</span>
+                                                <div class="rate-ratio"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="color-sell-1">5.7789</span></td>
+                                            <td class="text-center"><span>3500</span></td>
+                                            <td class="text-center">
+                                                <span>20274</span>
+                                                <div class="rate-ratio"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="color-sell-1">5.7780</span></td>
+                                            <td class="text-center"><span>500</span></td>
+                                            <td class="text-center">
+                                                <span>289</span>
+                                                <div class="rate-ratio"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="color-sell-1">5.7870</span></td>
+                                            <td class="text-center"><span>1064</span></td>
+                                            <td class="text-center">
+                                                <span>6162</span>
+                                                <div class="rate-ratio"></div>
+                                            </td>
+                                        </tr>
+                                       
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- dahboard-order-block -->
+
+                    </div>
+                    <!-- col-lg-3 -->
+
+                    <div class="col-lg-12">
+                        <div class="card p-0 mt-3" style="height: 300px;">
+                            <div class="card-header">
+                                AÇIK EMİRLERİM
+                            </div>
+                            <table class="table coin-list">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Miktar</th>
+                                        <th scope="col">Price</th>
+                                        <th scope="col">Zamanı</th>
+                                        <th scope="col">Türü</th>
+                                    </tr>
+                                </thead>
+                              
+                            </table>
+                        </div>
+                        <!-- latest-tranjections-area -->
+                    </div>
+
+                </div>
+            </div>
+            <!-- dashboard-body -->
+        </div>
+    </div>
+    <!-- dashboard-block -->
+
+    <script type="text/javascript" src="https://d33t3vvu2t2yu5.cloudfront.net/tv.js"></script>
+    <script>
+        new TradingView.widget({
+            "width": '100%',
+            "height": 400,
+            "symbol": "FX:USDTRY",
+            "interval": "D",
+            "timezone": "Etc/UTC",
+            "theme": "white",
+            "style": "1",
+            "locale": "en",
+            "toolbar_bg": "#f1f3f6",
+            "enable_publishing": false,
+            "allow_symbol_change": true,
+            "container_id": "tradingview_57f17"
+        });
+    </script>
+
+    <!--footer area start-->
+    <footer id="contact" class="footer-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-12">
+                    <p class="copyright-text">
+
+                    </p>
+                </div>
+                <div class="col-md-4 col-sm-9">
+                    <p class="copyright-text">
+                        Copyright 2019 FuturX
+                    </p>
+                </div>
+                <div class="col-md-4 col-sm-3">
+
+                </div>
+            </div>
+        </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
